@@ -701,7 +701,7 @@ footer{background:var(--navy);color:#cdd6e2;padding:72px 0 130px}
   if(reduce){ return; } // skip motion
 
   /* ---- Lenis smooth scroll ---- */
-  var lenis = new Lenis({ duration:1.15, easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));}, smoothWheel:true });
+  var lenis = new Lenis({lerp:0.2, wheelMultiplier:1, smoothWheel:true, syncTouch:false});
   function raf(time){ lenis.raf(time); requestAnimationFrame(raf); }
   // sync via gsap.ticker
   if(window.gsap){
